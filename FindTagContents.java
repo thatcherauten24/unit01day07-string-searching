@@ -14,8 +14,13 @@ public class FindTagContents {
         int closingTagStartPos = text.indexOf("</", textPos);
         int closingTagEndPos = text.indexOf(">", closingTagStartPos);
 
-        System.out.print("The text you entered was within a blank tag");
-        System.out.println(text.substring(closingTagStartPos + 2, closingTagEndPos));
+        if (textPos == -1) {
+            System.out.print("There are no '" + searchTerm + "' tags in the entered HTML");
+        } else {
+            System.out.println(text.substring(closingTagStartPos + 2, closingTagEndPos));
+        }
+
+        
         scanner.close();
     }
 }

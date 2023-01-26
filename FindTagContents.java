@@ -10,14 +10,14 @@ public class FindTagContents {
         System.out.println("Thanks, now enter the search term");
         String searchTerm = scanner.nextLine();
 
-        int textPos = text.indexOf(searchTerm);
-        int closingTagStartPos = text.indexOf("</", textPos);
-        int closingTagEndPos = text.indexOf(">", closingTagStartPos);
+        int textPos = text.indexOf("<" + searchTerm + ">");
+        int closingTagStartPos = text.indexOf(">", textPos);
+        int closingTagEndPos = text.indexOf("</", closingTagStartPos);
 
         if (textPos == -1) {
             System.out.print("There are no '" + searchTerm + "' tags in the entered HTML");
         } else {
-            System.out.println(text.substring(closingTagStartPos + 2, closingTagEndPos));
+            System.out.println(text.substring(closingTagStartPos + 1, closingTagEndPos));
         }
 
         

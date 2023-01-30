@@ -11,16 +11,17 @@ public class FindTagContents {
         String searchTerm = scanner.nextLine();
 
         int textPos = text.indexOf("<" + searchTerm + ">");
-        int closingTagStartPos = text.indexOf(">", textPos);
-        int closingTagEndPos = text.indexOf("</", closingTagStartPos);
+        int tagStartPos = text.indexOf(">", textPos);
+        int tagEndPos = text.indexOf("</", tagStartPos);
 
         if (textPos == -1) {
             System.out.print("There are no '" + searchTerm + "' tags in the entered HTML");
         } else {
-            System.out.println(text.substring(closingTagStartPos + 1, closingTagEndPos));
+            System.out.println(text.substring(tagStartPos + 1, tagEndPos));
         }
 
         
         scanner.close();
     }
 }
+//commit

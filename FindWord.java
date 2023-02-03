@@ -1,3 +1,10 @@
+// BUG: searching for "z" in "the quick brown fox jumped" caused the following error:
+/* 
+ * Exception in thread "main" java.lang.StringIndexOutOfBoundsException: begin 0, end -1, length 27
+        at java.base/java.lang.String.checkBoundsBeginEnd(String.java:3319)
+        at java.base/java.lang.String.substring(String.java:1874)
+        at FindWord.main(FindWord.java:15)
+ */
 import java.util.Scanner;
 
 public class FindWord {

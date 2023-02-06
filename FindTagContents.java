@@ -1,4 +1,3 @@
-// good work
 import java.util.Scanner;
 
 public class FindTagContents {
@@ -25,4 +24,3 @@ public class FindTagContents {
         scanner.close();
     }
 }
-//commit
